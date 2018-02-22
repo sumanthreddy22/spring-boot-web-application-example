@@ -1,11 +1,12 @@
 pipeline {
 	agent any
-	
-	steps {
-		stages {
-			stage('build') {
+
+	stages {
+		stage('build') {
+			steps {
 				mvn clean package
 			}
 		}
 	}
+	
 }	
