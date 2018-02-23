@@ -1,6 +1,6 @@
 pipeline  {
 	agent {
-		steps {
+		docker {
 			
 			sh '''
 				sudo docker build -t boot-docker:${BUILD_NUMBER} ${WORKSPACE}
