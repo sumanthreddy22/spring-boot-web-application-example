@@ -1,8 +1,5 @@
 pipeline  {
-	agent {
-		sudo docker build -t boot-docker:${BUILD_NUMBER} ${WORKSPACE}.execute()
-		sudo docker run -p 8081:8080 boot-docker:${BUILD_NUMBER}.execute()
-	}
+	agent any
 	tools {
 		maven 'Maven3'
 		jdk 'JDK8'
