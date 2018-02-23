@@ -1,9 +1,12 @@
 pipeline  {
 	agent {
-		sh '''
-			sudo docker build -t boot-docker:${BUILD_NUMBER} ${WORKSPACE}
-			sudo docker run -p 8081:8080 boot-docker:${BUILD_NUMBER}
-		'''
+		steps {
+			
+			sh '''
+				sudo docker build -t boot-docker:${BUILD_NUMBER} ${WORKSPACE}
+				sudo docker run -p 8081:8080 boot-docker:${BUILD_NUMBER}
+			'''
+		}
 	}
 	tools {
 		maven 'Maven3'
