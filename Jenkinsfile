@@ -1,7 +1,7 @@
 pipeline  {
 	agent {
-		sudo docker build -t boot-docker:${BUILD_NUMBER} ${WORKSPACE}
-		sudo docker run -p 8081:8080 boot-docker:${BUILD_NUMBER}
+		sudo docker build -t boot-docker:${BUILD_NUMBER} ${WORKSPACE}.execute()
+		sudo docker run -p 8081:8080 boot-docker:${BUILD_NUMBER}.execute()
 	}
 	tools {
 		maven 'Maven3'
