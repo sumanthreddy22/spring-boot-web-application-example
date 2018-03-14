@@ -20,6 +20,22 @@ pipeline  {
 				sh 'mvn install'
 			}
 		}
+		stage ('Docker') {
+	
+		steps {
+		
+		sh '''
+			
+	
+		sudo docker build -t boot-docker:${BUILD_NUMBER} ${WORKSPACE}
+	
+			sudo docker run -p 8081:8585 boot-docker:${BUILD_NUMBER}
+
+		'''
+			}
+	
+	}
+
 		
 	}
 }
